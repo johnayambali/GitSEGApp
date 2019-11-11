@@ -74,6 +74,7 @@ public class SignUp extends AppCompatActivity {
                 if(patientBtn.isChecked()){
                     role = "Patient";
                 }
+
                 if(password.length()<6) {
                     Toast.makeText(SignUp.this, "Password needs to be 6 characters", Toast.LENGTH_SHORT).show();
                 }

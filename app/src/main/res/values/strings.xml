@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">clinicapp2</string>
+    <string name="servEntry">Service...</string>
+    <string name="rolEntry">Role...</string>
+    <string name="addServBtn">Add</string>
+    <string name="editServBtn">Edit</string>
+    <string name="delServBtn">Delete</string>
+    <string name="servLink">Service Manager</string>
+    <string name="userLink">User Manager</string>
+
 </resources>

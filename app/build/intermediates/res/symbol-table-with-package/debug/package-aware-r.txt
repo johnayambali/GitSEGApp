@@ -775,8 +775,10 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
+id addBtn
 id adjust_height
 id adjust_width
+id adminTxt
 id alertTitle
 id always
 id async
@@ -799,11 +801,13 @@ id customPanel
 id dark
 id decor_content_parent
 id default_activity_button
+id delBtn
 id dialog_button
 id dimensions
 id direct
 id disableHome
 id eBtn
+id editBtn
 id edit_query
 id end
 id expand_activities_button
@@ -855,6 +859,7 @@ id right
 id right_icon
 id right_side
 id roleText
+id roleTxt
 id screen
 id scrollIndicatorDown
 id scrollIndicatorUp
@@ -870,10 +875,13 @@ id search_plate
 id search_src_text
 id search_voice_btn
 id select_dialog_listview
+id servTxt
+id service_list
 id shortcut
 id showCustom
 id showHome
 id showTitle
+id smBtn
 id spacer
 id split_action_bar
 id spread
@@ -904,6 +912,8 @@ id titleDividerNoCustom
 id title_template
 id top
 id topPanel
+id tv_role
+id tv_service
 id txEmail
 id txPassword
 id unchecked
@@ -957,10 +967,13 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_admin
 layout activity_main
+layout activity_services
 layout activity_sign_up
 layout activity_welcome
 layout custom_dialog
+layout list_item
 layout notification_action
 layout notification_action_tombstone
 layout notification_template_custom_big
@@ -1000,6 +1013,7 @@ string abc_searchview_description_voice
 string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
+string addServBtn
 string app_name
 string common_google_play_services_enable_button
 string common_google_play_services_enable_text
@@ -1020,6 +1034,8 @@ string common_open_on_phone
 string common_signin_button_text
 string common_signin_button_text_long
 string default_web_client_id
+string delServBtn
+string editServBtn
 string firebase_database_url
 string gcm_defaultSenderId
 string google_api_key
@@ -1027,8 +1043,12 @@ string google_app_id
 string google_crash_reporting_api_key
 string google_storage_bucket
 string project_id
+string rolEntry
 string search_menu_title
+string servEntry
+string servLink
 string status_bar_notification_info_overflow
+string userLink
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style Animation_AppCompat_Dialog
@@ -1379,6 +1399,7 @@ style Widget_AppCompat_Toolbar
 style Widget_AppCompat_Toolbar_Button_Navigation
 style Widget_Compat_NotificationActionContainer
 style Widget_Compat_NotificationActionText
+style activated
 styleable ActionBar background backgroundSplit backgroundStacked contentInsetEnd contentInsetEndWithActions contentInsetLeft contentInsetRight contentInsetStart contentInsetStartWithNavigation customNavigationLayout displayOptions divider elevation height hideOnContentScroll homeAsUpIndicator homeLayout icon indeterminateProgressStyle itemPadding logo navigationMode popupTheme progressBarPadding progressBarStyle subtitle subtitleTextStyle title titleTextStyle
 styleable ActionBarLayout android_layout_gravity
 styleable ActionMenuItemView android_minWidth
