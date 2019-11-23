@@ -1,9 +1,15 @@
 package com.example.clinicapp2;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AlertDialog;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+
+import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -11,23 +17,27 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
+import android.text.TextUtils;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import java.util.ArrayList;
 
 public class Services extends AppCompatActivity {
+    EditText editTextServiceName;
+    EditText editTextServiceRole;
+    Button addButton;
+    ListView listViewServices;
+    DatabaseReference databaseServices;
 
-
-    //ListView sv;
-    EditText servText, rolText;
-    Button addBtn, editBtn, delBtn;
-    //ArrayList<String> services=new ArrayList<String>();
-    ArrayList<aService> servix=new ArrayList<aService>();
-    //ArrayAdapter<String> adapter;
-    private ListView lv;
-    private ServiceAdapter sa;
-    private aService serv;
-
+    List<aService> services;
 
 
     @Override
@@ -35,163 +45,118 @@ public class Services extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_services);
 
-        //sv = findViewById(R.id.servView);
-        lv = findViewById(R.id.service_list);
-        servText = findViewById(R.id.servTxt);
-        rolText =findViewById(R.id.roleTxt);
-        addBtn = findViewById(R.id.addBtn);
-        editBtn =findViewById(R.id.editBtn);
-        delBtn=findViewById(R.id.delBtn);
+        editTextServiceName = (EditText) findViewById(R.id.editTextServiceName);
+        editTextServiceRole = (EditText) findViewById(R.id.editTextServiceRole);
+        listViewServices = (ListView) findViewById(R.id.listViewServices);
+        addButton = (Button) findViewById(R.id.addButton);
+        databaseServices = FirebaseDatabase.getInstance().getReference("Service");
 
 
-        //adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_single_choice, services);
-        //sv.setAdapter(adapter);
-
-        sa = new ServiceAdapter(this, servix);
-        lv.setAdapter(sa);
-
-
-        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        addButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                view.setSelected(true);
+            public void onClick(View view) {
+                addService(); //Add method of addService
             }
         });
 
+        services = new ArrayList<>();
 
-        //Set selected item
-
-
-        //Handle events
-
-        addBtn.setOnClickListener(new View.OnClickListener() {
+        listViewServices.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
-            public void onClick(View v) {
-                add();
+            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
+                aService service = services.get(i);
+                showUpdateDeleteDialog(service.getId(), service.getServiceName());
+                return true;
             }
         });
-
-        editBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                update();
-            }
-        });
-
-        delBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                delete();
-            }
-        });
-
-        //return bar
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                finish();
-                return true;
-        }
+    protected void onStart() {
+        super.onStart();
+        databaseServices.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                services.clear();
+                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+                    aService service = postSnapshot.getValue(aService.class);
+                    services.add(service);
+                }
+                ServiceList servicesAdapter = new ServiceList(Services.this, services);
+                listViewServices.setAdapter(servicesAdapter);
+            }
 
-        return super.onOptionsItemSelected(item);
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 
-    public boolean onCreateOptionsMenu(Menu menu) {
+    private void showUpdateDeleteDialog(final String serviceId, String serviceName) {
+
+        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
+        LayoutInflater inflater = getLayoutInflater();
+        final View dialogView = inflater.inflate(R.layout.activity_update, null);
+        dialogBuilder.setView(dialogView);
+
+        final EditText editTextServiceName = (EditText) dialogView.findViewById(R.id.editTextServiceName);
+        final EditText editTextServiceRole = (EditText) dialogView.findViewById(R.id.editTextServiceRole);
+        final Button buttonUpdateService = (Button) dialogView.findViewById(R.id.buttonUpdateService);
+        final Button buttonDeleteService = (Button) dialogView.findViewById(R.id.buttonDeleteService);
+
+        dialogBuilder.setTitle(serviceName);
+        final AlertDialog b = dialogBuilder.create();
+        b.show();
+
+        buttonUpdateService.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String name = editTextServiceName.getText().toString().trim();
+                String role = editTextServiceRole.getText().toString().trim();
+                if (!TextUtils.isEmpty(name)) {
+                    updateService(serviceId, name, role);
+                    b.dismiss();
+                }
+            }
+        });
+
+        buttonDeleteService.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                deleteService(serviceId);
+                b.dismiss();
+            }
+        });
+    }
+
+    private void updateService(String id, String name, String role) {
+        DatabaseReference dR = FirebaseDatabase.getInstance().getReference("Service").child(id);
+        aService service = new aService(id, name, role);
+        dR.setValue(service);
+        Toast.makeText(getApplicationContext(), "Service Updated", Toast.LENGTH_SHORT).show();
+    }
+
+    private boolean deleteService(String id) {
+        DatabaseReference dR = FirebaseDatabase.getInstance().getReference("Service").child(id);
+        dR.removeValue();
+        Toast.makeText(getApplicationContext(), "Service Deleted", Toast.LENGTH_SHORT).show();
         return true;
     }
 
-
-
-
-    private void add(){
-        String service=servText.getText().toString();
-        String role=rolText.getText().toString();
-        aService newServ = new aService(service,role);
-        Boolean chek=checkRole(role);
-
-        if(!service.isEmpty()&& !role.isEmpty()&&service.length()>0&&role.length()>0){
-            if(chek) {
-                //Add
-                servix.add(new aService(service, role));
-
-                //Refresh
-                sa.notifyDataSetChanged();
-
-                servText.setText("");
-                rolText.setText("");
-
-                Toast.makeText(getApplicationContext(), "Added " + service, Toast.LENGTH_SHORT).show();
-            }else{
-                Toast.makeText(getApplicationContext(), "Role has to be either Doctor, Nurse, or Staff " + service, Toast.LENGTH_SHORT).show();
-            }
-        }else{
-            //Test case #3 checks if the fields service and role aren't fulfilled properly then sends a message
-            Toast.makeText(getApplicationContext(), "Nothing to add " + service, Toast.LENGTH_SHORT).show();
+    private void addService() {
+        String name = editTextServiceName.getText().toString().trim();
+        String role = editTextServiceRole.getText().toString().trim();
+        if (!TextUtils.isEmpty(name)) {
+            String id = databaseServices.push().getKey();
+            aService product = new aService(id, name, role);
+            databaseServices.child(id).setValue(product);
+            editTextServiceName.setText("");
+            editTextServiceRole.setText("");
+            Toast.makeText(this, "Service added", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "Please enter a service", Toast.LENGTH_SHORT).show();
         }
-    }
-
-    private void update(){
-
-
-        String service=servText.getText().toString();
-        String role=rolText.getText().toString();
-        aService newServ = new aService(service,role);
-        Boolean chek=checkRole(role);
-
-        //getting position
-        int pos = lv.getCheckedItemPosition();
-
-        if(!service.isEmpty()&& !role.isEmpty()&&service.length()>0&&role.length()>0){
-            if(chek) {
-                //removing
-                sa.remove(servix.get(pos));
-                //insert
-                sa.insert(newServ, pos);
-                //refresh
-                sa.notifyDataSetChanged();
-                Toast.makeText(getApplicationContext(), "Updated " + service, Toast.LENGTH_SHORT).show();
-            }else{
-                Toast.makeText(getApplicationContext(), "Role has to be either Doctor, Nurse, or Staff " + service, Toast.LENGTH_SHORT).show();
-            }
-        }else{
-            Toast.makeText(getApplicationContext(), "Nothing to edit...Enter new Service and Role then press edit. " + service, Toast.LENGTH_SHORT).show();
-        }
-
-
-
-    }
-
-
-    private void delete(){
-
-        int pos =lv.getCheckedItemPosition();
-
-        if(pos> -1){
-            //delete
-            servix.remove(servix.get(pos));
-            //refresh
-            sa.notifyDataSetChanged();
-
-            servText.setText("");
-            rolText.setText("");
-            Toast.makeText(getApplicationContext(), "Deleted ", Toast.LENGTH_SHORT).show();
-        }else{
-            Toast.makeText(getApplicationContext(), "Nothing to delete ", Toast.LENGTH_SHORT).show();
-        }
-    }
-
-    private Boolean checkRole(String role){
-
-        if(role.equals("Doctor") || role.equals("doctor") || role.equals("Nurse") || role.equals("nurse") || role.equals("Staff") || role.equals("staff")){
-
-            return true;
-
-        }
-        return false;
 
     }
 }

@@ -28,9 +28,14 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
+        <activity android:name="com.example.clinicapp2.EmployeeServiceView" />
+        <activity android:name="com.example.clinicapp2.EmployeeActivity" />
+        <activity android:name="com.example.clinicapp2.EmployeeService" />
+        <activity android:name="com.example.clinicapp2.clinic_signup" />
         <activity android:name="com.example.clinicapp2.Admin" />
         <activity android:name="com.example.clinicapp2.Services" />
         <activity android:name="com.example.clinicapp2.Welcome" />
+        <activity android:name="com.example.clinicapp2.Calender" />
         <activity android:name="com.example.clinicapp2.SignUp" />
         <activity android:name="com.example.clinicapp2.MainActivity" >
             <intent-filter>

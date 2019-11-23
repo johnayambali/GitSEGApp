@@ -1,7 +1,7 @@
 package com.example.clinicapp2;
 
 public class User {
-    public String fName, lName, email, password , role;
+    public String fName, lName, email, password , role, clinicID;
 
     public User(){
 
@@ -13,5 +13,6 @@ public class User {
         this.email = email;
         this.password = SignUp.toSHA256(password);
         this.role = role;
+        clinicID ="null";
     }
 }

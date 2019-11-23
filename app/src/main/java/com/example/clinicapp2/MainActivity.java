@@ -18,6 +18,11 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -52,21 +57,50 @@ public class MainActivity extends AppCompatActivity {
                 else if(TextUtils.isEmpty(password)){
                     Toast.makeText(MainActivity.this, "Field empty: Please enter your password", Toast.LENGTH_SHORT).show();
                 }
+                else if(email.equals("admin@strator.com") && password.equals("5T5ptQ"))
+                {
+                    Intent x = new Intent(getApplicationContext(), Admin.class);
+                    startActivity(x);
+
+                }
+                else if(TextUtils.isEmpty(password)){
+                    Toast.makeText(MainActivity.this, "Please enter your password", Toast.LENGTH_SHORT).show();
+
+                }
                 else if(!(TextUtils.isEmpty(email)&& TextUtils.isEmpty(password))) {
-                    //Test case #2 checks if email and password are actual accounts authenticated by firebase database
                     mFireBaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(MainActivity.this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
-                                //Test case #1 checks if use is admin, then directs to admin class
-                                if(email.equals("admin@admin.com") & (password.equals("5T5ptQ"))){
-                                    Intent i = new Intent(getApplicationContext(), Admin.class);
-                                    startActivity(i);
+                                final String uid;
+                                FirebaseUser user;
+                                user = FirebaseAuth.getInstance().getCurrentUser();
+                                uid = user.getUid();
+                                DatabaseReference reference = FirebaseDatabase.getInstance().getReference("User").child(uid);
 
-                                }else{
-                                    Intent i = new Intent(getApplicationContext(), Welcome.class);
-                                    startActivity(i);
-                                }
+                                reference.addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                        final String role= dataSnapshot.child("role").getValue(String.class);
+                                        System.out.println(role);
+                                        if(role.equals("Employee")){
+                                            Intent i = new Intent(MainActivity.this, EmployeeActivity.class);
+                                            startActivity(i);
+                                        }
+                                        else{
+                                            Intent in = new Intent(MainActivity.this, Welcome.class);
+                                            startActivity(in);
+                                        }
+
+
+                                    }
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+
+                                    }
+                                });
+
+
 
                             } else {
                                 Toast.makeText(MainActivity.this, "Login Failed", Toast.LENGTH_SHORT).show();
@@ -75,7 +109,6 @@ public class MainActivity extends AppCompatActivity {
                     });
                 }
             }
-
         });
         upBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,6 +120,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+
 
 
 
