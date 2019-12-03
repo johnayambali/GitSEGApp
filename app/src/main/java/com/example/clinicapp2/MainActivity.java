@@ -61,7 +61,11 @@ public class MainActivity extends AppCompatActivity {
                 else if(TextUtils.isEmpty(password)){
                     Toast.makeText(MainActivity.this, "Field empty: Please enter your password", Toast.LENGTH_SHORT).show();
                 }
+<<<<<<< HEAD
                 else if(email.equals("admin@admin1.com") && password.equals("5T5ptQ"))
+=======
+                else if(email.equals("admin@strator.com") && password.equals("5T5ptQ"))
+>>>>>>> a55d5abab4d0efb4710ddf6c60f878dc1c4eef12
                 {
                     Intent x = new Intent(getApplicationContext(), Admin.class);
                     startActivity(x);
@@ -80,8 +84,13 @@ public class MainActivity extends AppCompatActivity {
                                 FirebaseUser user;
                                 user = FirebaseAuth.getInstance().getCurrentUser();
                                 uid = user.getUid();
+<<<<<<< HEAD
                                 DatabaseReference reference = FirebaseDatabase.getInstance().getReference("User").child("Employee").child(uid);
                                 //DatabaseReference reference2= FirebaseDatabase.getInstance().g
+=======
+                                DatabaseReference reference = FirebaseDatabase.getInstance().getReference("User").child(uid);
+
+>>>>>>> a55d5abab4d0efb4710ddf6c60f878dc1c4eef12
                                 reference.addListenerForSingleValueEvent(new ValueEventListener() {
                                     @Override
                                     public void onDataChange(DataSnapshot dataSnapshot) {
@@ -92,7 +101,10 @@ public class MainActivity extends AppCompatActivity {
                                             startActivity(i);
                                         }
                                         else{
+<<<<<<< HEAD
 
+=======
+>>>>>>> a55d5abab4d0efb4710ddf6c60f878dc1c4eef12
                                             Intent in = new Intent(MainActivity.this, Welcome.class);
                                             startActivity(in);
                                         }

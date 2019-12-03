@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.text.TextUtils;
+<<<<<<< HEAD
 import android.view.ContextMenu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -17,6 +18,13 @@ import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+=======
+import android.view.View;
+import android.widget.Button;
+import android.widget.ListView;
+import android.widget.Toast;
+
+>>>>>>> a55d5abab4d0efb4710ddf6c60f878dc1c4eef12
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -27,6 +35,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class EmployeeServiceView extends AppCompatActivity {
+<<<<<<< HEAD
     TextView addServiceBtn, deleteServiceBtn;
     DatabaseReference databaseReference, clinicDBR, db;
     List<aService> services;
@@ -34,16 +43,28 @@ public class EmployeeServiceView extends AppCompatActivity {
     List<aService> employeeServices;
     String clinicID;
 
+=======
+    Button addServiceBtn, deleteServiceBtn;
+    DatabaseReference databaseReference;
+    List<aService> services;
+    ListView adminListView, employeeListView;
+>>>>>>> a55d5abab4d0efb4710ddf6c60f878dc1c4eef12
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_employee_service_view);
+<<<<<<< HEAD
         addServiceBtn = (TextView) findViewById(R.id.addServiceBtn);
+=======
+        addServiceBtn = (Button) findViewById(R.id.addServiceBtn);
+        deleteServiceBtn = (Button) findViewById(R.id.deleteServiceBtn);
+>>>>>>> a55d5abab4d0efb4710ddf6c60f878dc1c4eef12
         adminListView = (ListView) findViewById(R.id.adminListView);
         employeeListView = (ListView) findViewById(R.id.employeeListView);
 
         services = new ArrayList<>();
+<<<<<<< HEAD
         employeeServices = new ArrayList<>();
         databaseReference = FirebaseDatabase.getInstance().getReference("Service");
         clinicDBR= FirebaseDatabase.getInstance().getReference("Clinic");
@@ -53,6 +74,16 @@ public class EmployeeServiceView extends AppCompatActivity {
 
 
 
+=======
+        databaseReference = FirebaseDatabase.getInstance().getReference("Service");
+
+        addServiceBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                addEmployeeService(); //Add method of addService
+            }
+        });
+>>>>>>> a55d5abab4d0efb4710ddf6c60f878dc1c4eef12
 
     }
     @Override
@@ -73,6 +104,7 @@ public class EmployeeServiceView extends AppCompatActivity {
 
             }
         });
+<<<<<<< HEAD
 
         final String uID;
         FirebaseUser user;
@@ -112,6 +144,18 @@ public class EmployeeServiceView extends AppCompatActivity {
 
 
 
+=======
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                services.clear();
+                for(DataSnapshot postSnapshot: dataSnapshot.getChildren()){
+                    aService service = postSnapshot.getValue(aService.class);
+                    services.add(service);
+                }
+                ServiceList servicesAdapter = new ServiceList(EmployeeServiceView.this, services);
+                employeeListView.setAdapter(servicesAdapter);
+>>>>>>> a55d5abab4d0efb4710ddf6c60f878dc1c4eef12
             }
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
@@ -119,6 +163,7 @@ public class EmployeeServiceView extends AppCompatActivity {
             }
         });
     }
+<<<<<<< HEAD
 
 
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo){
@@ -167,3 +212,13 @@ public class EmployeeServiceView extends AppCompatActivity {
     }
 
 }
+=======
+    //private boolean deleteEmployeeService(String id) {
+
+    //}
+
+    private void addEmployeeService() {
+
+    }
+}
+>>>>>>> a55d5abab4d0efb4710ddf6c60f878dc1c4eef12

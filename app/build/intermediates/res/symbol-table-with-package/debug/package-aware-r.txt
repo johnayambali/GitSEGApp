@@ -777,7 +777,10 @@ id activity_chooser_view_content
 id activity_main
 id add
 id addButton
+<<<<<<< HEAD
 id addService
+=======
+>>>>>>> a55d5abab4d0efb4710ddf6c60f878dc1c4eef12
 id addServiceBtn
 id adjust_height
 id adjust_width
@@ -813,7 +816,11 @@ id customPanel
 id dark
 id decor_content_parent
 id default_activity_button
+<<<<<<< HEAD
 id deleteService
+=======
+id deleteServiceBtn
+>>>>>>> a55d5abab4d0efb4710ddf6c60f878dc1c4eef12
 id dialog_button
 id dimensions
 id direct
@@ -831,7 +838,10 @@ id etFlatNumber
 id etPhoneNumber
 id etStreetName
 id etStreetNumber
+<<<<<<< HEAD
 id exitNewButton
+=======
+>>>>>>> a55d5abab4d0efb4710ddf6c60f878dc1c4eef12
 id expand_activities_button
 id expanded_menu
 id firstName
@@ -914,7 +924,10 @@ id search_src_text
 id search_voice_btn
 id select_dialog_listview
 id serviceManage
+<<<<<<< HEAD
 id services
+=======
+>>>>>>> a55d5abab4d0efb4710ddf6c60f878dc1c4eef12
 id shortcut
 id showCustom
 id showHome

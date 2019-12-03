@@ -35,7 +35,11 @@ public class Welcome extends AppCompatActivity {
         user = FirebaseAuth.getInstance().getCurrentUser();
         uid = user.getUid();
 
+<<<<<<< HEAD
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("User").child("Patient").child(uid);
+=======
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("User").child(uid);
+>>>>>>> a55d5abab4d0efb4710ddf6c60f878dc1c4eef12
         reference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {

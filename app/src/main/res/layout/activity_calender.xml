@@ -49,7 +49,11 @@
 
     <TextView
         android:id="@+id/mondayHour"
+<<<<<<< HEAD
         android:layout_width="100dp"
+=======
+        android:layout_width="90dp"
+>>>>>>> a55d5abab4d0efb4710ddf6c60f878dc1c4eef12
         android:layout_height="42dp"
         android:layout_alignTop="@+id/mondayTitle"
         android:layout_marginStart="11dp"
@@ -57,7 +61,11 @@
         android:layout_marginTop="0dp"
         android:layout_toEndOf="@+id/mondayTitle"
         android:layout_toRightOf="@+id/mondayTitle"
+<<<<<<< HEAD
         android:hint="09:00-17:00"
+=======
+        android:hint="9:00-17:00"
+>>>>>>> a55d5abab4d0efb4710ddf6c60f878dc1c4eef12
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#8f001a"
         android:textSize="18sp" />
@@ -199,7 +207,11 @@
 
     <TextView
         android:id="@+id/tuesdayHour"
+<<<<<<< HEAD
         android:layout_width="100dp"
+=======
+        android:layout_width="90dp"
+>>>>>>> a55d5abab4d0efb4710ddf6c60f878dc1c4eef12
         android:layout_height="42dp"
         android:layout_alignTop="@+id/tuesdayTitle"
         android:layout_marginStart="12dp"
@@ -207,7 +219,11 @@
         android:layout_marginTop="0dp"
         android:layout_toEndOf="@+id/tuesdayTitle"
         android:layout_toRightOf="@+id/tuesdayTitle"
+<<<<<<< HEAD
         android:hint="09:00-17:00"
+=======
+        android:hint="9:00-17:00"
+>>>>>>> a55d5abab4d0efb4710ddf6c60f878dc1c4eef12
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#8f001a"
         android:textSize="18sp" />
@@ -229,7 +245,11 @@
 
     <TextView
         android:id="@+id/wednesdayHour"
+<<<<<<< HEAD
         android:layout_width="100dp"
+=======
+        android:layout_width="90dp"
+>>>>>>> a55d5abab4d0efb4710ddf6c60f878dc1c4eef12
         android:layout_height="42dp"
         android:layout_alignTop="@+id/wednesdayTitle"
         android:layout_marginStart="13dp"
@@ -237,7 +257,11 @@
         android:layout_marginTop="0dp"
         android:layout_toEndOf="@+id/wednesdayTitle"
         android:layout_toRightOf="@+id/wednesdayTitle"
+<<<<<<< HEAD
         android:hint="09:00-17:00"
+=======
+        android:hint="9:00-17:00"
+>>>>>>> a55d5abab4d0efb4710ddf6c60f878dc1c4eef12
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#8f001a"
         android:textSize="18sp" />
@@ -351,7 +375,11 @@
 
     <TextView
         android:id="@+id/thursdayHour"
+<<<<<<< HEAD
         android:layout_width="100dp"
+=======
+        android:layout_width="90dp"
+>>>>>>> a55d5abab4d0efb4710ddf6c60f878dc1c4eef12
         android:layout_height="42dp"
         android:layout_alignTop="@+id/thursdayTitle"
         android:layout_marginStart="13dp"
@@ -359,7 +387,11 @@
         android:layout_marginTop="0dp"
         android:layout_toEndOf="@+id/thursdayTitle"
         android:layout_toRightOf="@+id/thursdayTitle"
+<<<<<<< HEAD
         android:hint="09:00-17:00"
+=======
+        android:hint="9:00-17:00"
+>>>>>>> a55d5abab4d0efb4710ddf6c60f878dc1c4eef12
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#8f001a"
         android:textSize="18sp" />
@@ -381,7 +413,11 @@
 
     <TextView
         android:id="@+id/fridayHour"
+<<<<<<< HEAD
         android:layout_width="100dp"
+=======
+        android:layout_width="90dp"
+>>>>>>> a55d5abab4d0efb4710ddf6c60f878dc1c4eef12
         android:layout_height="42dp"
         android:layout_alignTop="@+id/fridayTitle"
         android:layout_marginStart="8dp"
@@ -389,7 +425,11 @@
         android:layout_marginTop="-2dp"
         android:layout_toEndOf="@+id/fridayTitle"
         android:layout_toRightOf="@+id/fridayTitle"
+<<<<<<< HEAD
         android:hint="09:00-17:00"
+=======
+        android:hint="9:00-17:00"
+>>>>>>> a55d5abab4d0efb4710ddf6c60f878dc1c4eef12
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#8f001a"
         android:textSize="18sp" />

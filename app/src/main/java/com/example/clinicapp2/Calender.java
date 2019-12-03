@@ -2,6 +2,7 @@ package com.example.clinicapp2;
 
 import android.os.Bundle;
 import android.view.View;
+<<<<<<< HEAD
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -24,10 +25,21 @@ public class Calender extends AppCompatActivity{
     Button mondayEditBtn, tuesdayEditBtn, wednesdayEditBtn, thursdayEditBtn, fridayEditBtn;
     DatabaseReference databaseReference;
     String currentClinicID;
+=======
+import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.regex.Pattern;
+
+public class Calender extends AppCompatActivity{
+>>>>>>> a55d5abab4d0efb4710ddf6c60f878dc1c4eef12
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calender);
+<<<<<<< HEAD
         manageCalender = (TextView) findViewById(R.id.manageCalendar);
         mondayTitle = (TextView) findViewById(R.id.mondayTitle);
         tuesdayTitle = (TextView) findViewById(R.id.tuesdayTitle);
@@ -103,6 +115,16 @@ public class Calender extends AppCompatActivity{
             System.out.println(hour);
             databaseReference.child("Monday").child("hour").setValue(time);
 
+=======
+    }
+
+    public void mondayEdit(View v){
+        TextView mondayHour = (TextView) findViewById(R.id.mondayHour);
+        TextView mondayEdit = (TextView) findViewById(R.id.mondayEdit);
+        if (!mondayEdit.getText().toString().trim().equals("") && Pattern.matches("^[0-2][0-9][0-9][0-9]-[0-2][0-9][0-9][0-9]$", mondayEdit.getText().toString().trim())){
+            mondayHour.setText(mondayEdit.getText());
+            mondayEdit.setText("");
+>>>>>>> a55d5abab4d0efb4710ddf6c60f878dc1c4eef12
         }
         else{
             Toast.makeText(Calender.this, "Invalid Time", Toast.LENGTH_SHORT).show();
@@ -111,6 +133,7 @@ public class Calender extends AppCompatActivity{
     }
 
     public void tuesdayEdit(View v){
+<<<<<<< HEAD
         if (!tuesdayEditTime.getText().toString().trim().equals("") && Pattern.matches("^[0-2][0-9]:[0-9][0-9]-[0-2][0-9]:[0-9][0-9]$", tuesdayEditTime.getText().toString().trim())){
             tuesdayHour.setText(tuesdayEditTime.getText());
             tuesdayEditTime.setText("");
@@ -118,6 +141,13 @@ public class Calender extends AppCompatActivity{
             Hour hour = new Hour();
             hour.setHour(time);
             databaseReference.child("Tuesday").child("hour").setValue(time);
+=======
+        TextView tuesdayHour = (TextView) findViewById(R.id.tuesdayHour);
+        TextView tuesdayEdit = (TextView) findViewById(R.id.tuesdayEdit);
+        if (!tuesdayEdit.getText().toString().trim().equals("") && Pattern.matches("^[0-2][0-9][0-9][0-9]-[0-2][0-9][0-9][0-9]$", tuesdayEdit.getText().toString().trim())){
+            tuesdayHour.setText(tuesdayEdit.getText());
+            tuesdayEdit.setText("");
+>>>>>>> a55d5abab4d0efb4710ddf6c60f878dc1c4eef12
         }
         else{
             Toast.makeText(Calender.this, "Invalid Time", Toast.LENGTH_SHORT).show();
@@ -125,6 +155,7 @@ public class Calender extends AppCompatActivity{
     }
 
     public void wednesdayEdit(View v){
+<<<<<<< HEAD
         if (!wednesdayEditTime.getText().toString().trim().equals("") && Pattern.matches("^[0-2][0-9]:[0-9][0-9]-[0-2][0-9]:[0-9][0-9]$", wednesdayEditTime.getText().toString().trim())){
             wednesdayHour.setText(wednesdayEditTime.getText());
             wednesdayEditTime.setText("");
@@ -132,6 +163,13 @@ public class Calender extends AppCompatActivity{
             Hour hour = new Hour();
             hour.setHour(time);
             databaseReference.child("Wednesday").child("hour").setValue(hour);
+=======
+        TextView wednesdayHour = (TextView) findViewById(R.id.wednesdayHour);
+        TextView wednesdayEdit = (TextView) findViewById(R.id.wednesdayEdit);
+        if (!wednesdayEdit.getText().toString().trim().equals("") && Pattern.matches("^[0-2][0-9][0-9][0-9]-[0-2][0-9][0-9][0-9]$", wednesdayEdit.getText().toString().trim())){
+            wednesdayHour.setText(wednesdayEdit.getText());
+            wednesdayEdit.setText("");
+>>>>>>> a55d5abab4d0efb4710ddf6c60f878dc1c4eef12
         }
         else{
             Toast.makeText(Calender.this, "Invalid Time", Toast.LENGTH_SHORT).show();
@@ -139,6 +177,7 @@ public class Calender extends AppCompatActivity{
     }
 
     public void thursdayEdit(View v){
+<<<<<<< HEAD
         if (!thursdayEditTime.getText().toString().trim().equals("") && Pattern.matches("^[0-2][0-9]:[0-9][0-9]-[0-2][0-9]:[0-9][0-9]$", thursdayEditTime.getText().toString().trim())){
             thursdayHour.setText(thursdayEditTime.getText());
             thursdayEditTime.setText("");
@@ -146,6 +185,13 @@ public class Calender extends AppCompatActivity{
             Hour hour = new Hour();
             hour.setHour(time);
             databaseReference.child("Thursday").child("hour").setValue(time);
+=======
+        TextView thursdayHour = (TextView) findViewById(R.id.thursdayHour);
+        TextView thursdayEdit = (TextView) findViewById(R.id.thursdayEdit);
+        if (!thursdayEdit.getText().toString().trim().equals("") && Pattern.matches("^[0-2][0-9][0-9][0-9]-[0-2][0-9][0-9][0-9]$", thursdayEdit.getText().toString().trim())){
+            thursdayHour.setText(thursdayEdit.getText());
+            thursdayEdit.setText("");
+>>>>>>> a55d5abab4d0efb4710ddf6c60f878dc1c4eef12
         }
         else{
             Toast.makeText(Calender.this, "Invalid Time", Toast.LENGTH_SHORT).show();
@@ -153,6 +199,7 @@ public class Calender extends AppCompatActivity{
     }
 
     public void fridayEdit(View v){
+<<<<<<< HEAD
         if (!fridayEditTime.getText().toString().trim().equals("") && Pattern.matches("^[0-2][0-9]:[0-9][0-9]-[0-2][0-9]:[0-9][0-9]$", fridayEditTime.getText().toString().trim())){
             fridayHour.setText(fridayEditTime.getText());
             fridayEditTime.setText("");
@@ -160,6 +207,13 @@ public class Calender extends AppCompatActivity{
             Hour hour = new Hour();
             hour.setHour(time);
             databaseReference.child("Friday").child("hour").setValue(time);
+=======
+        TextView fridayHour = (TextView) findViewById(R.id.fridayHour);
+        TextView fridayEdit = (TextView) findViewById(R.id.fridayEdit);
+        if (!fridayEdit.getText().toString().trim().equals("") && Pattern.matches("^[0-2][0-9][0-9][0-9]-[0-2][0-9][0-9][0-9]$", fridayEdit.getText().toString().trim())){
+            fridayHour.setText(fridayEdit.getText());
+            fridayEdit.setText("");
+>>>>>>> a55d5abab4d0efb4710ddf6c60f878dc1c4eef12
         }
         else{
             Toast.makeText(Calender.this, "Invalid Time", Toast.LENGTH_SHORT).show();
