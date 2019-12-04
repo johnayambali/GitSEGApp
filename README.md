@@ -16,6 +16,7 @@ Admin credentials
 Email: admin@strator.com
 Password: 5T5ptQ
 
+<<<<<<< HEAD
 Employee Credentials
 
 Email: kb24@gmail.com
@@ -26,4 +27,7 @@ Patient Credentials
 
 Email: ja@gmail.com
 Password: 1234567
+=======
+
+>>>>>>> 2f0339586ef13ff1c999277e71a324dd4ee338d3
 

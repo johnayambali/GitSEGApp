@@ -97,5 +97,8 @@ public class Clinic {
 
     }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2f0339586ef13ff1c999277e71a324dd4ee338d3
 }
