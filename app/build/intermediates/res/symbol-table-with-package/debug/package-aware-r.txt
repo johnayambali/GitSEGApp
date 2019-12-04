@@ -777,7 +777,18 @@ id activity_chooser_view_content
 id activity_main
 id add
 id addButton
+<<<<<<< HEAD
 id addService
+=======
+<<<<<<< HEAD
+id addService
+=======
+<<<<<<< HEAD
+id addService
+=======
+>>>>>>> a55d5abab4d0efb4710ddf6c60f878dc1c4eef12
+>>>>>>> d3627a3eb309eb827b8fbb36451e84130498bb4f
+>>>>>>> 13acf58ecba74e7061cbdd1d1ba590115429ecd4
 id addServiceBtn
 id adjust_height
 id adjust_width
@@ -813,7 +824,19 @@ id customPanel
 id dark
 id decor_content_parent
 id default_activity_button
+<<<<<<< HEAD
 id deleteService
+=======
+<<<<<<< HEAD
+id deleteService
+=======
+<<<<<<< HEAD
+id deleteService
+=======
+id deleteServiceBtn
+>>>>>>> a55d5abab4d0efb4710ddf6c60f878dc1c4eef12
+>>>>>>> d3627a3eb309eb827b8fbb36451e84130498bb4f
+>>>>>>> 13acf58ecba74e7061cbdd1d1ba590115429ecd4
 id dialog_button
 id dimensions
 id direct
@@ -831,7 +854,18 @@ id etFlatNumber
 id etPhoneNumber
 id etStreetName
 id etStreetNumber
+<<<<<<< HEAD
 id exitNewButton
+=======
+<<<<<<< HEAD
+id exitNewButton
+=======
+<<<<<<< HEAD
+id exitNewButton
+=======
+>>>>>>> a55d5abab4d0efb4710ddf6c60f878dc1c4eef12
+>>>>>>> d3627a3eb309eb827b8fbb36451e84130498bb4f
+>>>>>>> 13acf58ecba74e7061cbdd1d1ba590115429ecd4
 id expand_activities_button
 id expanded_menu
 id firstName
@@ -914,7 +948,18 @@ id search_src_text
 id search_voice_btn
 id select_dialog_listview
 id serviceManage
+<<<<<<< HEAD
 id services
+=======
+<<<<<<< HEAD
+id services
+=======
+<<<<<<< HEAD
+id services
+=======
+>>>>>>> a55d5abab4d0efb4710ddf6c60f878dc1c4eef12
+>>>>>>> d3627a3eb309eb827b8fbb36451e84130498bb4f
+>>>>>>> 13acf58ecba74e7061cbdd1d1ba590115429ecd4
 id shortcut
 id showCustom
 id showHome

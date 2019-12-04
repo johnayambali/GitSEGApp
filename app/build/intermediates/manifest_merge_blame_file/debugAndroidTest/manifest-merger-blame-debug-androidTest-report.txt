@@ -3,6 +3,13 @@
 3    package="com.example.clinicapp2.test" >
 4
 5    <uses-sdk
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> d3627a3eb309eb827b8fbb36451e84130498bb4f
+>>>>>>> 13acf58ecba74e7061cbdd1d1ba590115429ecd4
 5-->/Users/johnny/AndroidStudioProjects/clinicapp2/app/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger7530668561844871537.xml:5:5-74
 6        android:minSdkVersion="16"
 6-->/Users/johnny/AndroidStudioProjects/clinicapp2/app/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger7530668561844871537.xml:5:15-41
@@ -28,6 +35,39 @@
 17        <uses-library android:name="android.test.runner" />
 17-->/Users/johnny/AndroidStudioProjects/clinicapp2/app/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger7530668561844871537.xml:8:9-60
 17-->/Users/johnny/AndroidStudioProjects/clinicapp2/app/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger7530668561844871537.xml:8:23-57
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+5-->/Users/johnny/AndroidStudioProjects/clinicapp2/app/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger5895068685234121339.xml:5:5-74
+6        android:minSdkVersion="16"
+6-->/Users/johnny/AndroidStudioProjects/clinicapp2/app/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger5895068685234121339.xml:5:15-41
+7        android:targetSdkVersion="29" />
+7-->/Users/johnny/AndroidStudioProjects/clinicapp2/app/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger5895068685234121339.xml:5:42-71
+8
+9    <instrumentation
+9-->/Users/johnny/AndroidStudioProjects/clinicapp2/app/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger5895068685234121339.xml:11:5-15:72
+10        android:name="androidx.test.runner.AndroidJUnitRunner"
+10-->/Users/johnny/AndroidStudioProjects/clinicapp2/app/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger5895068685234121339.xml:11:22-76
+11        android:functionalTest="false"
+11-->/Users/johnny/AndroidStudioProjects/clinicapp2/app/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger5895068685234121339.xml:14:22-52
+12        android:handleProfiling="false"
+12-->/Users/johnny/AndroidStudioProjects/clinicapp2/app/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger5895068685234121339.xml:13:22-53
+13        android:label="Tests for com.example.clinicapp2"
+13-->/Users/johnny/AndroidStudioProjects/clinicapp2/app/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger5895068685234121339.xml:15:22-70
+14        android:targetPackage="com.example.clinicapp2" />
+14-->/Users/johnny/AndroidStudioProjects/clinicapp2/app/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger5895068685234121339.xml:12:22-68
+15
+16    <application android:debuggable="true" >
+16-->/Users/johnny/AndroidStudioProjects/clinicapp2/app/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger5895068685234121339.xml:7:5-9:19
+16-->/Users/johnny/AndroidStudioProjects/clinicapp2/app/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger5895068685234121339.xml:7:18-43
+17        <uses-library android:name="android.test.runner" />
+17-->/Users/johnny/AndroidStudioProjects/clinicapp2/app/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger5895068685234121339.xml:8:9-60
+17-->/Users/johnny/AndroidStudioProjects/clinicapp2/app/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger5895068685234121339.xml:8:23-57
+>>>>>>> a55d5abab4d0efb4710ddf6c60f878dc1c4eef12
+>>>>>>> d3627a3eb309eb827b8fbb36451e84130498bb4f
+>>>>>>> 13acf58ecba74e7061cbdd1d1ba590115429ecd4
 18    </application>
 19
 20</manifest>

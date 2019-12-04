@@ -99,6 +99,13 @@ public class SignUp extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
                                 User information = new User(fName, lName, email, password, role);
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> d3627a3eb309eb827b8fbb36451e84130498bb4f
+>>>>>>> 13acf58ecba74e7061cbdd1d1ba590115429ecd4
 
                                 if(role.equals("Employee")){
                                     FirebaseDatabase.getInstance().getReference("User").child("Employee").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(information).addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -155,6 +162,47 @@ public class SignUp extends AppCompatActivity {
                                         }
                                     });
                                 }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+                                FirebaseDatabase.getInstance().getReference("User").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(information).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<Void> task) {
+                                        Toast.makeText(SignUp.this, "Registration Complete", Toast.LENGTH_SHORT).show();
+                                        final String uid;
+                                        FirebaseUser user;
+                                        user = FirebaseAuth.getInstance().getCurrentUser();
+                                        uid = user.getUid();
+                                        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("User").child(uid);
+
+                                        reference.addListenerForSingleValueEvent(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(DataSnapshot dataSnapshot) {
+                                                final String role= dataSnapshot.child("role").getValue(String.class);
+                                                System.out.println(role);
+                                                if(role.equals("Employee")){
+                                                    Intent i = new Intent(SignUp.this, EmployeeActivity.class);
+                                                    startActivity(i);
+                                                }
+                                                else{
+                                                    Intent in = new Intent(SignUp.this, Welcome.class);
+                                                    startActivity(in);
+                                                }
+
+
+                                            }
+                                            @Override
+                                            public void onCancelled(DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                    }
+                                });
+>>>>>>> a55d5abab4d0efb4710ddf6c60f878dc1c4eef12
+>>>>>>> d3627a3eb309eb827b8fbb36451e84130498bb4f
+>>>>>>> 13acf58ecba74e7061cbdd1d1ba590115429ecd4
 
                             }
                         }

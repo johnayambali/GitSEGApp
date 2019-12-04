@@ -1,4 +1,16 @@
+<<<<<<< HEAD
 #Tue Dec 03 18:13:17 EST 2019
+=======
+<<<<<<< HEAD
+#Tue Dec 03 18:13:17 EST 2019
+=======
+<<<<<<< HEAD
+#Tue Dec 03 18:13:17 EST 2019
+=======
+#Fri Nov 22 19:43:00 EST 2019
+>>>>>>> a55d5abab4d0efb4710ddf6c60f878dc1c4eef12
+>>>>>>> d3627a3eb309eb827b8fbb36451e84130498bb4f
+>>>>>>> 13acf58ecba74e7061cbdd1d1ba590115429ecd4
 path.2=classes2.dex
 path.1=classes.dex
 path.0=classes.dex

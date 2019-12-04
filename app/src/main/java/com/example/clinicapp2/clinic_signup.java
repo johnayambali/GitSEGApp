@@ -47,13 +47,40 @@ public class clinic_signup extends AppCompatActivity {
         clSaveBtn=findViewById(R.id.clSaveBtn);
 
         FirebaseUser user;
+<<<<<<< HEAD
         clinic = new Clinic();
+=======
+<<<<<<< HEAD
+        clinic = new Clinic();
+=======
+<<<<<<< HEAD
+        clinic = new Clinic();
+=======
+>>>>>>> a55d5abab4d0efb4710ddf6c60f878dc1c4eef12
+>>>>>>> d3627a3eb309eb827b8fbb36451e84130498bb4f
+>>>>>>> 13acf58ecba74e7061cbdd1d1ba590115429ecd4
 
 
 
         databaseReference = FirebaseDatabase.getInstance().getReference("Clinic");
+<<<<<<< HEAD
 
 
+=======
+<<<<<<< HEAD
+
+
+=======
+<<<<<<< HEAD
+
+
+=======
+        //we can get the employee ID and add it to the the clinic ID field
+        user = FirebaseAuth.getInstance().getCurrentUser();
+        employeeID = user.getUid();
+>>>>>>> a55d5abab4d0efb4710ddf6c60f878dc1c4eef12
+>>>>>>> d3627a3eb309eb827b8fbb36451e84130498bb4f
+>>>>>>> 13acf58ecba74e7061cbdd1d1ba590115429ecd4
 
         clSaveBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -97,6 +124,13 @@ public class clinic_signup extends AppCompatActivity {
                     clinic.setInsuranceType(insuranceType);
                     String mGroupId = databaseReference.push().getKey();
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> d3627a3eb309eb827b8fbb36451e84130498bb4f
+>>>>>>> 13acf58ecba74e7061cbdd1d1ba590115429ecd4
 
 
 
@@ -104,12 +138,34 @@ public class clinic_signup extends AppCompatActivity {
 
                     Toast.makeText(clinic_signup.this, "Clinic Registry Complete", Toast.LENGTH_SHORT).show();
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+                    databaseReference.push().setValue(clinic);
+                    Toast.makeText(clinic_signup.this, "Clinic Registry Complete", Toast.LENGTH_SHORT).show();
+>>>>>>> a55d5abab4d0efb4710ddf6c60f878dc1c4eef12
+>>>>>>> d3627a3eb309eb827b8fbb36451e84130498bb4f
+>>>>>>> 13acf58ecba74e7061cbdd1d1ba590115429ecd4
                     databaseReference = FirebaseDatabase.getInstance().getReference("User");
                     final String uid;
                     FirebaseUser user;
                     user = FirebaseAuth.getInstance().getCurrentUser();
                     uid = user.getUid();
+<<<<<<< HEAD
                     databaseReference.child("Employee").child(uid).child("clinicID").setValue(mGroupId);
+=======
+<<<<<<< HEAD
+                    databaseReference.child("Employee").child(uid).child("clinicID").setValue(mGroupId);
+=======
+<<<<<<< HEAD
+                    databaseReference.child("Employee").child(uid).child("clinicID").setValue(mGroupId);
+=======
+                    databaseReference.child(uid).child("clinicID").setValue(mGroupId);
+>>>>>>> a55d5abab4d0efb4710ddf6c60f878dc1c4eef12
+>>>>>>> d3627a3eb309eb827b8fbb36451e84130498bb4f
+>>>>>>> 13acf58ecba74e7061cbdd1d1ba590115429ecd4
                     Intent inToEmployeeActivity = new Intent(clinic_signup.this, EmployeeActivity.class);
                     startActivity(inToEmployeeActivity);
 
