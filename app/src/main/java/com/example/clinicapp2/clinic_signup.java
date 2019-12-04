@@ -47,13 +47,31 @@ public class clinic_signup extends AppCompatActivity {
         clSaveBtn=findViewById(R.id.clSaveBtn);
 
         FirebaseUser user;
+<<<<<<< HEAD
         clinic = new Clinic();
+=======
+<<<<<<< HEAD
+        clinic = new Clinic();
+=======
+>>>>>>> a55d5abab4d0efb4710ddf6c60f878dc1c4eef12
+>>>>>>> d3627a3eb309eb827b8fbb36451e84130498bb4f
 
 
 
         databaseReference = FirebaseDatabase.getInstance().getReference("Clinic");
+<<<<<<< HEAD
 
 
+=======
+<<<<<<< HEAD
+
+
+=======
+        //we can get the employee ID and add it to the the clinic ID field
+        user = FirebaseAuth.getInstance().getCurrentUser();
+        employeeID = user.getUid();
+>>>>>>> a55d5abab4d0efb4710ddf6c60f878dc1c4eef12
+>>>>>>> d3627a3eb309eb827b8fbb36451e84130498bb4f
 
         clSaveBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -97,6 +115,10 @@ public class clinic_signup extends AppCompatActivity {
                     clinic.setInsuranceType(insuranceType);
                     String mGroupId = databaseReference.push().getKey();
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> d3627a3eb309eb827b8fbb36451e84130498bb4f
 
 
 
@@ -104,12 +126,27 @@ public class clinic_signup extends AppCompatActivity {
 
                     Toast.makeText(clinic_signup.this, "Clinic Registry Complete", Toast.LENGTH_SHORT).show();
 
+<<<<<<< HEAD
+=======
+=======
+                    databaseReference.push().setValue(clinic);
+                    Toast.makeText(clinic_signup.this, "Clinic Registry Complete", Toast.LENGTH_SHORT).show();
+>>>>>>> a55d5abab4d0efb4710ddf6c60f878dc1c4eef12
+>>>>>>> d3627a3eb309eb827b8fbb36451e84130498bb4f
                     databaseReference = FirebaseDatabase.getInstance().getReference("User");
                     final String uid;
                     FirebaseUser user;
                     user = FirebaseAuth.getInstance().getCurrentUser();
                     uid = user.getUid();
+<<<<<<< HEAD
                     databaseReference.child("Employee").child(uid).child("clinicID").setValue(mGroupId);
+=======
+<<<<<<< HEAD
+                    databaseReference.child("Employee").child(uid).child("clinicID").setValue(mGroupId);
+=======
+                    databaseReference.child(uid).child("clinicID").setValue(mGroupId);
+>>>>>>> a55d5abab4d0efb4710ddf6c60f878dc1c4eef12
+>>>>>>> d3627a3eb309eb827b8fbb36451e84130498bb4f
                     Intent inToEmployeeActivity = new Intent(clinic_signup.this, EmployeeActivity.class);
                     startActivity(inToEmployeeActivity);
 
