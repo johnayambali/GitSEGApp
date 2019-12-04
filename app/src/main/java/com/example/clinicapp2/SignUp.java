@@ -40,6 +40,7 @@ public class SignUp extends AppCompatActivity {
     RadioButton employeeBtn, patientBtn;
     private FirebaseAuth mFireBaseAuth;
     DatabaseReference databaseReference;
+    static User currUser ;
     String role= "";
 
     @Override
@@ -98,14 +99,62 @@ public class SignUp extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
                                 User information = new User(fName, lName, email, password, role);
-                                FirebaseDatabase.getInstance().getReference("User").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(information).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                    @Override
-                                    public void onComplete(@NonNull Task<Void> task) {
-                                        Toast.makeText(SignUp.this, "Registration Complete", Toast.LENGTH_SHORT).show();
-                                        Intent i = new Intent(getApplicationContext(), Welcome.class);
-                                        startActivity(i);
-                                    }
-                                });
+
+                                if(role.equals("Employee")){
+                                    FirebaseDatabase.getInstance().getReference("User").child("Employee").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(information).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<Void> task) {
+                                            Toast.makeText(SignUp.this, "Employee Sign Up Complete", Toast.LENGTH_SHORT).show();
+                                            final String uid;
+                                            FirebaseUser user;
+                                            user = FirebaseAuth.getInstance().getCurrentUser();
+                                            uid = user.getUid();
+                                            DatabaseReference reference = FirebaseDatabase.getInstance().getReference("User").child("Employee").child(uid);
+                                            reference.addListenerForSingleValueEvent(new ValueEventListener() {
+                                                @Override
+                                                public void onDataChange(DataSnapshot dataSnapshot) {
+                                                    final String role= dataSnapshot.child("role").getValue(String.class);
+                                                    System.out.println(role);
+                                                    if(role.equals("Employee")){
+                                                        Intent i = new Intent(SignUp.this, EmployeeActivity.class);
+                                                        startActivity(i);
+                                                    }
+                                                }
+                                                @Override
+                                                public void onCancelled(DatabaseError databaseError) {
+
+                                                }
+                                            });
+
+                                        }
+                                    });
+                                }else{
+                                    FirebaseDatabase.getInstance().getReference("User").child("Patient").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(information).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<Void> task) {
+                                            Toast.makeText(SignUp.this, "Patient SignUp Complete", Toast.LENGTH_SHORT).show();
+                                            final String id;
+                                            FirebaseUser user2;
+                                            user2 = FirebaseAuth.getInstance().getCurrentUser();
+                                            id = user2.getUid();
+                                            DatabaseReference reference2 = FirebaseDatabase.getInstance().getReference("User").child("Patient").child(id);
+                                            reference2.addListenerForSingleValueEvent(new ValueEventListener() {
+                                                @Override
+                                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                    final String role = dataSnapshot.child("role").getValue(String.class);
+                                                    if (role.equals("Patient")){
+                                                        Intent in = new Intent(SignUp.this, Welcome.class);
+                                                        startActivity(in);
+                                                    }
+                                                }
+                                                @Override
+                                                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                                }
+                                            });
+                                        }
+                                    });
+                                }
 
                             }
                         }
@@ -114,8 +163,6 @@ public class SignUp extends AppCompatActivity {
             }
         });
     }
-
-
     public static String toSHA256(String password){
         try {
             MessageDigest digest = MessageDigest.getInstance("SHA-256");

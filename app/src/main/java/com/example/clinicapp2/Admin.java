@@ -42,7 +42,7 @@ public class Admin extends AppCompatActivity {
                 final String role= dataSnapshot.child("role").getValue(String.class);
 
                 welcomeText = (TextView) findViewById(R.id.welcomeText);
-                welcomeText.setText("Welcome " + fName + "! You are logged-in as " + role);
+                welcomeText.setText("Welcome Administrator" );
 
             }
             @Override
