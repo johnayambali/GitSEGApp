@@ -61,7 +61,23 @@ public class MainActivity extends AppCompatActivity {
                 else if(TextUtils.isEmpty(password)){
                     Toast.makeText(MainActivity.this, "Field empty: Please enter your password", Toast.LENGTH_SHORT).show();
                 }
+<<<<<<< HEAD
                 else if(email.equals("admin@admin1.com") && password.equals("5T5ptQ"))
+=======
+<<<<<<< HEAD
+                else if(email.equals("admin@admin1.com") && password.equals("5T5ptQ"))
+=======
+<<<<<<< HEAD
+                else if(email.equals("admin@admin1.com") && password.equals("5T5ptQ"))
+=======
+<<<<<<< HEAD
+                else if(email.equals("admin@admin1.com") && password.equals("5T5ptQ"))
+=======
+                else if(email.equals("admin@strator.com") && password.equals("5T5ptQ"))
+>>>>>>> a55d5abab4d0efb4710ddf6c60f878dc1c4eef12
+>>>>>>> d3627a3eb309eb827b8fbb36451e84130498bb4f
+>>>>>>> 13acf58ecba74e7061cbdd1d1ba590115429ecd4
+>>>>>>> 10e7b2b35b74e8c4652750815f5c902b37b5e8c7
                 {
                     Intent x = new Intent(getApplicationContext(), Admin.class);
                     startActivity(x);
@@ -80,8 +96,28 @@ public class MainActivity extends AppCompatActivity {
                                 FirebaseUser user;
                                 user = FirebaseAuth.getInstance().getCurrentUser();
                                 uid = user.getUid();
+<<<<<<< HEAD
                                 DatabaseReference reference = FirebaseDatabase.getInstance().getReference("User").child("Employee").child(uid);
                                 //DatabaseReference reference2= FirebaseDatabase.getInstance().g
+=======
+<<<<<<< HEAD
+                                DatabaseReference reference = FirebaseDatabase.getInstance().getReference("User").child("Employee").child(uid);
+                                //DatabaseReference reference2= FirebaseDatabase.getInstance().g
+=======
+<<<<<<< HEAD
+                                DatabaseReference reference = FirebaseDatabase.getInstance().getReference("User").child("Employee").child(uid);
+                                //DatabaseReference reference2= FirebaseDatabase.getInstance().g
+=======
+<<<<<<< HEAD
+                                DatabaseReference reference = FirebaseDatabase.getInstance().getReference("User").child("Employee").child(uid);
+                                //DatabaseReference reference2= FirebaseDatabase.getInstance().g
+=======
+                                DatabaseReference reference = FirebaseDatabase.getInstance().getReference("User").child(uid);
+
+>>>>>>> a55d5abab4d0efb4710ddf6c60f878dc1c4eef12
+>>>>>>> d3627a3eb309eb827b8fbb36451e84130498bb4f
+>>>>>>> 13acf58ecba74e7061cbdd1d1ba590115429ecd4
+>>>>>>> 10e7b2b35b74e8c4652750815f5c902b37b5e8c7
                                 reference.addListenerForSingleValueEvent(new ValueEventListener() {
                                     @Override
                                     public void onDataChange(DataSnapshot dataSnapshot) {
@@ -92,7 +128,22 @@ public class MainActivity extends AppCompatActivity {
                                             startActivity(i);
                                         }
                                         else{
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+
+=======
+<<<<<<< HEAD
+
+=======
+<<<<<<< HEAD
+
+=======
+>>>>>>> a55d5abab4d0efb4710ddf6c60f878dc1c4eef12
+>>>>>>> d3627a3eb309eb827b8fbb36451e84130498bb4f
+>>>>>>> 13acf58ecba74e7061cbdd1d1ba590115429ecd4
+>>>>>>> 10e7b2b35b74e8c4652750815f5c902b37b5e8c7
                                             Intent in = new Intent(MainActivity.this, Welcome.class);
                                             startActivity(in);
                                         }
