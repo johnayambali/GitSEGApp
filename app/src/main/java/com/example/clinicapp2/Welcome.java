@@ -26,6 +26,8 @@ public class Welcome extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
         final String uid;
+
+
         FirebaseUser user;
 
 
@@ -33,17 +35,17 @@ public class Welcome extends AppCompatActivity {
         user = FirebaseAuth.getInstance().getCurrentUser();
         uid = user.getUid();
 
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("User").child(uid);
-
-
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("User").child("Patient").child(uid);
         reference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 final String fName = dataSnapshot.child("fName").getValue(String.class);
-                final String role= dataSnapshot.child("role").getValue(String.class);
+                final String role= dataSnapshot.child("role").getValue(String.class) ;
 
                 welcomeText = (TextView) findViewById(R.id.welcomeText);
                 welcomeText.setText("Welcome " + fName + "! You are logged-in as " + role);
+
+
 
             }
             @Override
@@ -51,6 +53,8 @@ public class Welcome extends AppCompatActivity {
 
             }
         });
+
+
 
 
 
