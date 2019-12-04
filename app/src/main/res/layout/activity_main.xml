@@ -53,4 +53,11 @@
         android:textColor="#ffffff"
         android:textSize="22sp" />
 
+    <TextView
+        android:id="@+id/patientActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="             Registered Patient? Click Here for sign in." />
+
 </LinearLayout>

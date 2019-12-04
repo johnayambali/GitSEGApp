@@ -1,101 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     tools:context=".Services">
 
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="Service Manager"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        android:typeface="serif" />
     <EditText
-        android:id="@+id/servTxt"
-        android:layout_width="143dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:ems="10"
-        android:hint="@string/servEntry"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toStartOf="@+id/roleTxt"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:id="@+id/editTextServiceName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/titleTextView"
 
+        android:hint="Enter Service Name" />
 
     <EditText
-        android:id="@+id/roleTxt"
-        android:layout_width="143dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:ems="10"
-        android:hint="@string/rolEntry"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/servTxt"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:id="@+id/editTextServiceRole"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextServiceName"
+        android:hint="Enter Service Role" />
 
     <Button
-        android:id="@+id/addBtn"
-        android:layout_width="0dp"
+        android:id="@+id/addButton"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/button_rounded"
-        android:text="@string/addServBtn"
-        android:textColor="#ffffff"
-        app:layout_constraintEnd_toStartOf="@+id/editBtn"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/servTxt" />
+        android:layout_below="@id/editTextServiceRole"
+        android:layout_weight="1"
+        android:layout_centerInParent="true"
+        android:text="Add" />
 
-    <Button
-        android:id="@+id/editBtn"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:background="@drawable/button_rounded"
-        android:text="@string/editServBtn"
-        android:textColor="#ffffff"
-        app:layout_constraintEnd_toStartOf="@+id/delBtn"
-        app:layout_constraintHorizontal_bias="0.619"
-        app:layout_constraintStart_toEndOf="@+id/addBtn"
-        app:layout_constraintTop_toBottomOf="@+id/servTxt" />
 
-    <Button
-        android:id="@+id/delBtn"
-        android:layout_width="0dp"
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:background="@drawable/button_rounded"
-        android:text="@string/delServBtn"
-        android:textColor="#ffffff"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/editBtn"
-        app:layout_constraintTop_toBottomOf="@+id/servTxt" />
+        android:layout_below="@id/addButton"
+        android:text="Services"
+        android:textAlignment="center" />
 
     <ListView
-        android:id="@+id/service_list"
-        android:layout_width="339dp"
-        android:layout_height="406dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:choiceMode="singleChoice"
-        android:listSelector="@android:color/darker_gray"
+        android:id="@+id/listViewServices"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/textView">
+    </ListView>
 
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editBtn" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

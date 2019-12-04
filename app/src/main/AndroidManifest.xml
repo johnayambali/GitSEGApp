@@ -9,9 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Admin"></activity>
-        <activity android:name=".Services"></activity>
+        <activity android:name=".EmployeeServiceView" />
+        <activity android:name=".EmployeeActivity" />
+        <activity android:name=".EmployeeService" />
+        <activity android:name=".clinic_signup" />
+        <activity android:name=".Admin" />
+        <activity android:name=".Services" />
         <activity android:name=".Welcome" />
+        <activity android:name=".Calender" />
         <activity android:name=".SignUp" />
         <activity android:name=".MainActivity">
             <intent-filter>

@@ -1,0 +1,29 @@
+https://github.com/johnayambali/GitSEGApp.git
+
+
+
+Patient functionality couldn't be fully implemented due to time constraints and crashing of the app, so we left the app as was prior to patient functionality. Screenshots of in- progress patient functionality are provided to give a view of how it would have turned out. 
+
+
+
+Members: 
+	John Ambali: 8614877
+	Samir Timi Kaoura: 7613923
+
+
+Admin credentials 
+
+Email: admin@strator.com
+Password: 5T5ptQ
+
+Employee Credentials
+
+Email: kb24@gmail.com
+Passwrd: 1234567
+
+
+Patient Credentials
+
+Email: ja@gmail.com
+Password: 1234567
+

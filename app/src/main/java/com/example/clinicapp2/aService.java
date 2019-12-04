@@ -1,30 +1,34 @@
 package com.example.clinicapp2;
 
-
-
 public class aService {
-    private String service;
-    private String role;
+    public String serviceName, serviceRole, id;
 
-    public aService(String service, String role){
-        this.service=service;
-        this.role="Performed by " + role;
+    public aService(){
     }
 
-    public String getService(){
-        return service;
+    public aService(String id, String serviceName, String serviceRole)
+    {
+        this.id = id;
+        this.serviceName = serviceName;
+        this.serviceRole = serviceRole;
+    }
+    public void setId(String id){
+        this.id = id;
+    }
+    public String getId(){
+        return this.id;
+    }
+    public void setServiceName(String serviceName){
+        this.serviceName = serviceName;
+    }
+    public String getServiceName(){
+        return this.serviceName;
+    }
+    public void setServiceRole(String serviceRole){
+        this.serviceRole = serviceRole;
+    }
+    public String getServiceRole(){
+        return this.serviceRole;
     }
 
-    public String getRole(){
-        return role;
-    }
-
-    public void setService(String service){
-        this.service= service;
-
-    }
-
-    public void setRole(String role){
-        this.role =role;
-    }
 }
