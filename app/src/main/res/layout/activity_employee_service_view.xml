@@ -40,7 +40,27 @@
         android:isScrollContainer="true">
     </ListView>
 
+<<<<<<< HEAD
     <TextView
+=======
+<<<<<<< HEAD
+    <TextView
+=======
+<<<<<<< HEAD
+    <TextView
+=======
+<<<<<<< HEAD
+    <TextView
+=======
+<<<<<<< HEAD
+    <TextView
+=======
+    <Button
+>>>>>>> a55d5abab4d0efb4710ddf6c60f878dc1c4eef12
+>>>>>>> d3627a3eb309eb827b8fbb36451e84130498bb4f
+>>>>>>> 13acf58ecba74e7061cbdd1d1ba590115429ecd4
+>>>>>>> 10e7b2b35b74e8c4652750815f5c902b37b5e8c7
+>>>>>>> 82865bfd9362cb3a3a01942b7d11c378f31a2989
         android:id="@+id/addServiceBtn"
         android:layout_width="160dp"
         android:layout_height="wrap_content"
@@ -83,6 +103,52 @@
         android:textSize="18sp"
         android:textStyle="bold" />
 
+<<<<<<< HEAD
 
 
 </RelativeLayout>
+=======
+<<<<<<< HEAD
+
+
+</RelativeLayout>
+=======
+<<<<<<< HEAD
+
+
+</RelativeLayout>
+=======
+<<<<<<< HEAD
+
+
+</RelativeLayout>
+=======
+<<<<<<< HEAD
+
+
+</RelativeLayout>
+=======
+    <Button
+        android:id="@+id/deleteServiceBtn"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/adminListView"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="33dp"
+        android:layout_marginRight="33dp"
+        android:layout_toEndOf="@+id/addServiceBtn"
+        android:layout_toRightOf="@+id/addServiceBtn"
+        android:text="Delete Service"
+        android:textColor="#FFFF" />
+
+</RelativeLayout>
+
+>>>>>>> a55d5abab4d0efb4710ddf6c60f878dc1c4eef12
+>>>>>>> d3627a3eb309eb827b8fbb36451e84130498bb4f
+>>>>>>> 13acf58ecba74e7061cbdd1d1ba590115429ecd4
+>>>>>>> 10e7b2b35b74e8c4652750815f5c902b37b5e8c7
+>>>>>>> 82865bfd9362cb3a3a01942b7d11c378f31a2989

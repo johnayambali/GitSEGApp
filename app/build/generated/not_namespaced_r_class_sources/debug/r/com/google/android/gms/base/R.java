@@ -62,6 +62,19 @@ public final class R {
     public static final class id {
         private id() {}
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> d3627a3eb309eb827b8fbb36451e84130498bb4f
+>>>>>>> 13acf58ecba74e7061cbdd1d1ba590115429ecd4
+>>>>>>> 10e7b2b35b74e8c4652750815f5c902b37b5e8c7
+>>>>>>> 82865bfd9362cb3a3a01942b7d11c378f31a2989
         public static final int adjust_height = 0x7f07003f;
         public static final int adjust_width = 0x7f070040;
         public static final int auto = 0x7f070046;
@@ -71,6 +84,29 @@ public final class R {
         public static final int none = 0x7f0700a1;
         public static final int standard = 0x7f0700d3;
         public static final int wide = 0x7f070108;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+        public static final int adjust_height = 0x7f07003e;
+        public static final int adjust_width = 0x7f07003f;
+        public static final int auto = 0x7f070045;
+        public static final int dark = 0x7f07005d;
+        public static final int icon_only = 0x7f070083;
+        public static final int light = 0x7f07008d;
+        public static final int none = 0x7f07009e;
+        public static final int standard = 0x7f0700cf;
+        public static final int wide = 0x7f070104;
+>>>>>>> a55d5abab4d0efb4710ddf6c60f878dc1c4eef12
+>>>>>>> d3627a3eb309eb827b8fbb36451e84130498bb4f
+>>>>>>> 13acf58ecba74e7061cbdd1d1ba590115429ecd4
+>>>>>>> 10e7b2b35b74e8c4652750815f5c902b37b5e8c7
+>>>>>>> 82865bfd9362cb3a3a01942b7d11c378f31a2989
     }
     public static final class string {
         private string() {}
